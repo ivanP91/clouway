@@ -9,6 +9,6 @@ import java.io.*;
 public class Demo {
     public static void main(String[] args) throws IOException {
         DirectoryBrowser d= new DirectoryBrowser();
-        d.listContent("/home/clouway/development/idea-IU-141.713.2");
+        System.out.println(d.listContent("/home/clouway/development/idea-IU-141.713.2/build.txt"));
     }
 }

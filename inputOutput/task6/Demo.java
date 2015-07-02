@@ -13,6 +13,6 @@ public class Demo {
         OutputStream out = new FileOutputStream("src/com/clouway/inputOutput/task6/output.ser");
         data.saveObject(out, vw);
         InputStream inputStream= new FileInputStream("src/com/clouway/inputOutput/task6/output.ser");
-        System.out.println(data.getObject(inputStream));
+        data.getObject(inputStream);
     }
 }

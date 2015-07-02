@@ -9,9 +9,10 @@ public class Vehicle implements Serializable {
     public String model;
     public String color;
     public int volumeOfEngine;
-    public Vehicle(String model, String color, int volumeOfEngine){
-        this.volumeOfEngine=volumeOfEngine;
-        this.color=color;
-        this.model=model;
+
+    public Vehicle(String model, String color, int volumeOfEngine) {
+        this.volumeOfEngine = volumeOfEngine;
+        this.color = color;
+        this.model = model;
     }
 }

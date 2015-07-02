@@ -7,24 +7,32 @@ import java.io.*;
  */
 public class ConsoleReadAndWriteInTextFail {
 
-    public void consoleReadAndWriteInTextFile() throws IOException {
+    public String consoleReadAndWriteInTextFile() throws IOException {
+        String message="";
         BufferedReader name=new BufferedReader(new InputStreamReader(System.in));
         String failName=name.readLine();
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter out = new BufferedWriter(new FileWriter("src/com/clouway/inputOutput/task2/"+ failName +".txt"));
+        BufferedWriter out=null;
+        BufferedReader in=null;
         try {
+            out = new BufferedWriter(new FileWriter("src/com/clouway/inputOutput/task2/"+ failName +".txt"));
             String lineFromInput=null;
                do {
+                   in = new BufferedReader(new InputStreamReader(System.in));
                    lineFromInput = in.readLine();
                    out.write(lineFromInput);
                    //out.newLine();
                }while (!lineFromInput.equalsIgnoreCase("."));
-            System.out.println("Write Successful");
+            message="Write Successful";
         } catch (IOException e1) {
-            System.out.println("Error during reading/writing");
+            message="Error during reading/writing";
         }finally {
-            out.close();
-            in.close();
+            if (out==null){
+                out.close();
+            }
+            if (in==null){
+                in.close();
+            }
         }
+        return message;
     }
 }

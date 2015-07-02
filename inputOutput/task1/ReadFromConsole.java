@@ -7,24 +7,24 @@ import java.util.Scanner;
  */
 public class ReadFromConsole {
 
-    public void readString(){
+    public String readString(){
         Scanner input=new Scanner(System.in);
         String s=input.nextLine();
-        System.out.println(s);
+        return s;
     }
-    public void readInt(){
+    public int readInt(){
         Scanner input=new Scanner(System.in);
         int s=input.nextInt();
-        System.out.println(s);
+        return s;
     }
-    public void readChar(){
+    public char readChar(){
         Scanner input=new Scanner(System.in);
         char s=input.next().charAt(0);
-        System.out.println(s);
+        return s;
     }
-    public  void readFloat(){
+    public  float readFloat(){
         Scanner input=new Scanner(System.in);
         float s=input.nextFloat();
-        System.out.println(s);
+        return s;
     }
 }

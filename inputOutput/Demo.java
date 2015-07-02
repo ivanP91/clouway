@@ -26,12 +26,12 @@ public class Demo {
         DirectoryBrowser d= new DirectoryBrowser();
         d.listContent("/home/clouway/development/idea-IU-141.713.2");
         TransferObject transfer=new TransferObject();
-        transfer.transferObject();
+        //transfer.transferObject();
         Vehicle vw=new Vehicle("golf","red",2000);
         DataClass data=new DataClass();
         OutputStream out = new FileOutputStream("src/com/clouway/intro/task5/task6/output.ser");
         data.saveObject(out, vw);
         InputStream inputStream= new FileInputStream("src/com/clouway/intro/task5/task6/output.ser");
-        System.out.println(data.getObject(inputStream));
+        data.getObject(inputStream);
     }
 }

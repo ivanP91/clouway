@@ -8,29 +8,31 @@ import java.nio.file.*;
  */
 public class DirectoryBrowser {
 
-    public void listContent(String path) {
-        Path ford;
+    public String listContent(String path) {
+        Path pathOfFileOrDirectory;
+        String message = "";
         try {
-            ford = Paths.get(path);
-            ford.toRealPath();
-            boolean isRegularExecutableFile = Files.isRegularFile(ford);
+            pathOfFileOrDirectory = Paths.get(path);
+            pathOfFileOrDirectory.toRealPath();
+            boolean isRegularExecutableFile = Files.isRegularFile(pathOfFileOrDirectory);
             if (isRegularExecutableFile) {
-                System.out.println("\""+ford.getFileName() + "\" is file");
+                message = "\"" + pathOfFileOrDirectory.getFileName() + "\" is file";
             } else {
-                System.out.println("\"" + ford.getFileName() + "\" is directory and contains: ");
-                try (DirectoryStream<Path> stream = Files.newDirectoryStream(ford)) {
+                System.out.println("\"" + pathOfFileOrDirectory.getFileName() + "\" is directory and contains: ");
+                try (DirectoryStream<Path> stream = Files.newDirectoryStream(pathOfFileOrDirectory)) {
                     for (Path file : stream) {
                         System.out.println(file.getFileName());
                     }
-                }catch (IOException | DirectoryIteratorException x) {
+                } catch (IOException | DirectoryIteratorException x) {
                     System.err.println(x);
                 }
             }
         } catch (NoSuchFileException x) {
-            System.err.format(path + " no that file or directory%n");
+            message = path + " no that file or directory%n";
         } catch (IOException x) {
-            System.err.format(x.toString());
+            message = x.toString();
         }
+        return message;
     }
 
 }

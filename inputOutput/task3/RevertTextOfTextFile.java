@@ -12,16 +12,14 @@ public class RevertTextOfTextFile {
 
         try {
             inputStream = new BufferedReader(new FileReader("src/com/clouway/inputOutput/task3/input.txt"));
-            outputStream = new PrintWriter(new FileWriter("src/com/clouway/inputOutput/task3/output.txt"));
             String l;
             String text="";
-            int d,g;
             while ((l= inputStream.readLine()) != null) {
                 text+=l;
             }
+            outputStream = new PrintWriter(new FileWriter("src/com/clouway/inputOutput/task3/input.txt"));
             String reverse = new StringBuffer(text).reverse().toString();
             outputStream.write(reverse);
-            System.out.println(reverse);
         }finally {
             if (inputStream != null) {
                 inputStream.close();

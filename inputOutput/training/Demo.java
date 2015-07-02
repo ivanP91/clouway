@@ -1,5 +1,6 @@
 package com.clouway.inputOutput.training;
 
+import java.io.Console;
 import java.io.IOException;
 
 /**
@@ -7,9 +8,10 @@ import java.io.IOException;
  */
 public class Demo {
     public  static void main(String[] args) throws IOException {
-        Test test=new Test();
-        test.testMetod();
-        SearchInDirectory searchInDirectory=new SearchInDirectory();
-        searchInDirectory.searchInDirectory("src/com/clouway/intro/task5/training/", "s.txt");
+        //Test test=new Test();
+        //test.testMetod();
+        //test.move();
+        ///SearchInDirectory searchInDirectory=new SearchInDirectory();
+        //searchInDirectory.searchInDirectory("src/com/clouway/intro/task5/training/", "s.txt");
     }
 }

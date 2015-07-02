@@ -9,7 +9,7 @@ import java.io.*;
 public class Demo {
     public static void main(String[] args) throws IOException {
         ReadFromConsole read=new ReadFromConsole();
-        read.readString();
+        System.out.println(read.readString());
 
     }
 }

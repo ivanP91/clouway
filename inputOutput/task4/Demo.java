@@ -9,6 +9,8 @@ import java.io.*;
 public class Demo {
     public static void main(String[] args) throws IOException {
         TransferObject transfer=new TransferObject();
-        transfer.transferObject();
+        System.out.println(transfer.transferObject("src/com/clouway/inputOutput/task4/inputTransfer.txt","src/com/clouway/inputOutput/training/Slavi.txt",4));
+
+
     }
 }
