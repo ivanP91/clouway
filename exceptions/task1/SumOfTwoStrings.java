@@ -1,7 +1,7 @@
 package com.clouway.exceptions.task1;
 
 /**
- * Created by clouway on 15-6-4.
+ * dassdasdasdas
  */
 public class SumOfTwoStrings {
     public void sumOfStrings(String stringA, String stringB) {
